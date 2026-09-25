@@ -1,4 +1,4 @@
-# Khaza Shaik — Portfolio
+# Akhil Mukesh— Portfolio
 
 Personal portfolio site built with **Vite + React + Tailwind CSS + Framer Motion**.
 
@@ -29,7 +29,7 @@ npm run preview   # preview production build
 portfolio/
 ├── public/
 │   ├── resume.pdf                    ← generated, do not edit by hand
-│   └── Khaza-Shaik-Resume-ATS.docx   ← generated, do not edit by hand
+│   └── Akhil-Mukesh-Resume-ATS.docx   ← generated, do not edit by hand
 ├── scripts/
 │   ├── build-resume-pdf.mjs          ← renders the PDF résumé
 │   ├── build-resume-docx.mjs         ← renders the ATS-friendly .docx
@@ -137,4 +137,4 @@ Build once with `npm run build`, then deploy the `dist/` folder.
 
 ## License
 
-MIT © Khaza Shaik
+MIT © Akhil Mukesh

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Khaza Shaik — AI Engineer · Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --text: #1f2937;
+      --muted: #475569;
+      --faint: #94a3b8;
+      --accent: #0d9488;        /* teal-600 */
+      --accent-soft: #f0fdfa;   /* teal-50 */
+      --violet: #7c3aed;
+      --border: #e5e7eb;
+      --page: #ffffff;
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm 13mm;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10.25pt;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.005em;
+    }
+
+    .page {
+      width: 100%;
+      break-after: page;
+      page-break-after: always;
+    }
+    .page:last-child {
+      break-after: auto;
+      page-break-after: auto;
+    }
+
+    /* ---------- Header ---------- */
+    header.hero {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--ink);
+      margin-bottom: 14px;
+    }
+    .name {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 28pt;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--ink);
+      margin: 0;
+    }
+    .title {
+      font-size: 10.5pt;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+    .contact {
+      text-align: right;
+      font-size: 9pt;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .contact a { color: var(--muted); text-decoration: none; }
+    .contact strong { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Section primitives ---------- */
+    section { margin-bottom: 12px; break-inside: avoid-page; }
+    h2.section {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-size: 10pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin: 0 0 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2.section::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 11px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--violet) 100%);
+      border-radius: 2px;
+    }
+
+    .summary {
+      font-size: 10.25pt;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .summary strong { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Experience ---------- */
+    .job {
+      margin-bottom: 10px;
+      break-inside: avoid-page;
+    }
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .job-role {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0;
+    }
+    .job-role .at { color: var(--accent); font-weight: 600; }
+    .job-meta {
+      font-size: 8.75pt;
+      color: var(--faint);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .job-client {
+      font-size: 9pt;
+      color: var(--muted);
+      margin: 1px 0 4px;
+    }
+    .job-client strong { color: var(--ink); font-weight: 600; }
+    ul.bullets {
+      margin: 4px 0 4px 0;
+      padding-left: 15px;
+      color: var(--text);
+    }
+    ul.bullets li {
+      margin-bottom: 2px;
+      line-height: 1.45;
+    }
+    ul.bullets li::marker {
+      color: var(--accent);
+    }
+    .tech-line {
+      margin-top: 4px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 8.25pt;
+      color: var(--muted);
+      letter-spacing: -0.01em;
+    }
+    .tech-line .label {
+      color: var(--faint);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      margin-right: 4px;
+    }
+
+    /* ---------- Skills block ---------- */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      row-gap: 5px;
+      column-gap: 12px;
+      font-size: 9.5pt;
+    }
+    .skill-grid dt {
+      font-weight: 600;
+      color: var(--ink);
+      font-family: 'Outfit', 'Inter', sans-serif;
+    }
+    .skill-grid dd {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    /* ---------- Projects ---------- */
+    .proj {
+      margin-bottom: 7px;
+    }
+    .proj-title {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 10.25pt;
+    }
+    .proj-title .dot {
+      color: var(--accent);
+      margin: 0 4px;
+    }
+    .proj-desc {
+      font-size: 9.5pt;
+      color: var(--text);
+      margin-top: 1px;
+      line-height: 1.45;
+    }
+    .proj-tech {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 8pt;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ---------- Two-column layouts ---------- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 16px;
+    }
+    .two-col > section { margin-bottom: 0; }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8pt;
+      color: var(--faint);
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========================== PAGE 1 =========================== -->
+<div class="page">
+  <header class="hero">
+    <div>
+      <h1 class="name">Khaza Shaik</h1>
+      <div class="title">AI Engineer · Senior Software Engineer</div>
+    </div>
+    <div class="contact">
+      <div><strong>Hyderabad, India</strong></div>
+      <div><a href="mailto:shaikkhaza4@gmail.com">shaikkhaza4@gmail.com</a> · +91 82913 33422</div>
+      <div>
+        <a href="https://linkedin.com/in/khaza-shaik-3344b5157">linkedin.com/in/khaza-shaik</a>
+        · <a href="https://github.com/khazaShaik">github.com/khazaShaik</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section">Summary</h2>
+    <p class="summary">
+      <strong>AI engineer</strong> with <strong>10+ years</strong> of fullstack and backend experience — now shipping
+      <strong>LLM-powered features</strong> (RAG, agents, evals) in Python on top of a long career in enterprise
+      <strong>Java, Spring Boot, Angular, and cloud</strong> platforms at T-Mobile scale. Comfortable owning
+      features end-to-end: API design, async flows, observability, and production reliability.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section">Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <p class="job-role">Cloud Consultant <span class="at">· Concentrix</span></p>
+        <span class="job-meta">Aug 2023 — Present · Hyderabad</span>
+      </div>
+      <div class="job-client">Client: <strong>T-Mobile US</strong> — Supply Chain Management (SCM)</div>
+      <ul class="bullets">
+        <li>Own SCM platform serving <strong>5,000+ T-Mobile retail stores</strong> — managing end-to-end digital inventory, reverse logistics, and Device Logistics Management (DLM) processing <strong>500K+ daily transactions</strong>.</li>
+        <li>Developed <strong>TIMO Console</strong> and <strong>TIMO iOS App</strong> for inventory movement and logistics tracking, reducing manual reconciliation effort by <strong>~60%</strong> across the supply chain network.</li>
+        <li>Architected cloud-native microservices with <strong>Spring Boot</strong> and RESTful APIs; integrated <strong>Kafka</strong> and <strong>RabbitMQ</strong> async flows handling <strong>2M+ daily events</strong> with zero message loss.</li>
+        <li>Built CI/CD pipelines on <strong>GitHub Actions</strong> and <strong>Azure DevOps</strong>; containerized <strong>12+ services</strong> with Docker + Kubernetes, cutting deployment time from 4 hours to <strong>25 minutes</strong>.</li>
+      </ul>
+      <div class="tech-line"><span class="label">Stack</span>Java 17 · Spring Boot · Microservices · Angular 16 · AWS · Kubernetes · Kafka · RabbitMQ</div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <p class="job-role">Senior Software Engineer <span class="at">· Concentrix Catalyst</span></p>
+        <span class="job-meta">Jul 2019 — Aug 2023 · Hyderabad</span>
+      </div>
+      <div class="job-client">Clients: <strong>T-Mobile US</strong> · <strong>Union Pacific Railroad</strong></div>
+      <ul class="bullets">
+        <li>Delivered <strong>Crew Allocation &amp; Time Management</strong> for UPRR — designed Rest Day logic integrated end-to-end into the CREW module, serving <strong>30,000+ railroad crew members</strong>.</li>
+        <li>Sole owner of 3 SCM modules (<strong>DRI / DRO / DLM</strong>) at T-Mobile — resolved 40+ production incidents and improved module uptime from <strong>99.2% to 99.8%</strong>.</li>
+        <li>Integrated <strong>Kafka</strong> for async communication, enabling high-volume data loads of <strong>100K+ records/batch</strong> with <strong>3× throughput improvement</strong>.</li>
+        <li>Tuned <strong>Cassandra</strong> query patterns and data models, reducing p95 latency from <strong>850ms to 120ms</strong> across high-traffic endpoints serving <strong>2M+ daily requests</strong>.</li>
+        <li>Led root-cause investigations that reduced mean time to resolution (<strong>MTTR) by 35%</strong> on production issues.</li>
+      </ul>
+      <div class="tech-line"><span class="label">Stack</span>Spring Boot · Apigee · Cassandra · Kubernetes · Splunk · Angular 8 · Kafka</div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <p class="job-role">Software Engineer <span class="at">· Tata Consultancy Services</span></p>
+        <span class="job-meta">Feb 2016 — Jul 2019 · Mumbai</span>
+      </div>
+      <div class="job-client">Client: <strong>CCIL</strong> — Clearing Corporation of India Ltd.</div>
+      <ul class="bullets">
+        <li>Worked on CCIL — India's central counterparty providing guaranteed clearing &amp; settlement for Money, G-Sec, FX, and Derivative markets processing <strong>₹15L+ crore daily</strong>.</li>
+        <li>Shipped <strong>ERCS</strong> (Electronic Receipt &amp; Confirmation System) for collateral notices — live in production at <em>enotice.ccilindia.com</em>, serving <strong>200+ financial institutions</strong>.</li>
+        <li>Built <strong>CRM</strong> (Credit Risk Monitoring) from scratch — ingesting Excel data, calculating risk, and auto-categorizing members, replacing a 3-day manual process with a <strong>15-minute automated workflow</strong>.</li>
+      </ul>
+      <div class="tech-line"><span class="label">Stack</span>Spring · REST · Oracle · Tomcat · AngularJS · JSP · JPA · Git</div>
+    </div>
+  </section>
+</div>
+
+<!-- =========================== PAGE 2 =========================== -->
+<div class="page">
+  <section>
+    <h2 class="section">Selected Projects</h2>
+
+    <div class="proj">
+      <div class="proj-title">AI Test Agent (TOP) <span class="dot">·</span> <span style="color: var(--muted); font-weight: 500;">Intelligent QA Orchestration</span></div>
+      <div class="proj-desc">AI-driven testing agent. Analyzes codebase controllers, DTO schemas, and annotations to automatically generate business flows (onboarding), database relational test datasets, and scenarios from Jira tickets.</div>
+      <div class="proj-tech">Python · LangChain · RAG · FastAPI · Structured Extraction · SQL DDL</div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-title">Git Release Analyzer <span class="dot">·</span> <span style="color: var(--muted); font-weight: 500;">AI Release Auditing &amp; Summaries</span></div>
+      <div class="proj-desc">Compares release and production branches via Git APIs. Traces all code changes, commits, MRs, and file authors, generating separate high-level Business Summaries and technical dependency maps.</div>
+      <div class="proj-tech">Python · Git API · OpenAI · FastAPI · React · Risk Auditing</div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-title">DocuMind <span class="dot">·</span> <span style="color: var(--muted); font-weight: 500;">RAG-powered doc assistant</span></div>
+      <div class="proj-desc">Retrieval-augmented Q&amp;A system over technical docs. Ingests PDFs/Markdown, chunks with recursive splitting, embeds via OpenAI, retrieves via ChromaDB with hybrid search + cross-encoder reranking.</div>
+      <div class="proj-tech">Python · LangChain · OpenAI · ChromaDB · FastAPI · RAG</div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-title">AgentFlow <span class="dot">·</span> <span style="color: var(--muted); font-weight: 500;">Multi-agent workflow</span></div>
+      <div class="proj-desc">LangGraph-based stateful orchestration. Features planner, retriever, executor, and critic agents collaborating with tool calling, function routing, and self-correction loops.</div>
+      <div class="proj-tech">Python · LangGraph · LangChain · OpenAI · Function Calling · AI Agents</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section">Technical Skills</h2>
+    <dl class="skill-grid">
+      <dt>AI Engineering</dt>
+      <dd>Python · LangChain · LangGraph · OpenAI / GPT-4 · Anthropic Claude · Hugging Face · Ollama · FastAPI · RAG Pipelines · Vector DBs (ChromaDB, Pinecone) · Embeddings · AI Agents</dd>
+
+      <dt>Backend</dt>
+      <dd>Java 8 – 17 · Spring Boot · Spring Security · Microservices · Hibernate / JPA · REST APIs · OAuth 2.0 / JWT</dd>
+
+      <dt>Frontend</dt>
+      <dd>Angular (8 – 16) · TypeScript · JavaScript · RxJS · Tailwind CSS · Next.js</dd>
+
+      <dt>Cloud &amp; DevOps</dt>
+      <dd>AWS · Azure · Docker · Kubernetes · GitHub Actions</dd>
+
+      <dt>Data &amp; Messaging</dt>
+      <dd>Oracle / PL-SQL · PostgreSQL · MongoDB · Cassandra · Kafka · RabbitMQ · Splunk</dd>
+    </dl>
+  </section>
+
+  <div class="two-col">
+    <section>
+      <h2 class="section">Education</h2>
+      <div class="job" style="margin-bottom: 0;">
+        <div class="job-head">
+          <p class="job-role">B.Tech, Electronics &amp; Comm.</p>
+        </div>
+        <div class="job-client" style="margin-top: 2px;">Jawaharlal Nehru Technological University, India</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section">Certifications</h2>
+      <div style="font-size: 8.5pt; color: var(--text); line-height: 1.4;">
+        Stanford &amp; DeepLearning.AI: ML / Advanced Learning Algorithms · Spring Framework · Angular Template Design · Learning Java EE.
+      </div>
+    </section>
+  </div>
+
+  <div class="footer">
+    <span>Khaza Shaik — Resume</span>
+    <span>Hyderabad, India · shaikkhaza4@gmail.com</span>
+  </div>
+</div>
+
+</body>
+</html>

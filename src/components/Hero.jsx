@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { HiArrowDown, HiEnvelope, HiArrowDownTray } from 'react-icons/hi2';
@@ -8,46 +7,6 @@ import { SCROLL_OFFSET } from '../constants/layout';
 import ResumeDownloadButton from './resume/ResumeDownloadButton';
 import profileFallback from '../data/profile';
 import { useContent } from '../context/ContentContext';
-
-const PROFILE_SRC = `${import.meta.env.BASE_URL}profile.jpg`;
-
-/**
- * Big square portrait filling the right column of the hero.
- * Falls back to a gradient "KS" monogram if the image is missing.
- */
-function HeroPortrait() {
-  const [failed, setFailed] = useState(false);
-
-  return (
-    <div className="relative mx-auto w-full max-w-[290px] lg:mx-0 lg:max-w-none">
-      <div
-        className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-teal-400/15 via-transparent to-violet-500/15 blur-2xl dark:from-teal-400/25 dark:to-violet-500/25"
-        aria-hidden
-      />
-      <div className="relative overflow-hidden rounded-3xl border border-neutral-200/80 bg-white shadow-[0_20px_60px_-20px_rgba(15,23,42,0.35)] dark:border-white/[0.08] dark:bg-ink-900 dark:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)]">
-        <div className="aspect-square w-full">
-          {failed ? (
-            <div
-              className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-600 to-violet-600 font-display text-6xl font-bold text-white sm:text-7xl"
-              aria-hidden
-            >
-              KS
-            </div>
-          ) : (
-            <img
-              src={PROFILE_SRC}
-              alt="Portrait of Khaza Shaik"
-              loading="eager"
-              decoding="async"
-              onError={() => setFailed(true)}
-              className="h-full w-full object-cover"
-            />
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 const SCAN_TAGS = [
   { label: 'Full stack', Icon: SiReact, color: '#61DAFB' },
@@ -75,7 +34,7 @@ export default function Hero() {
             className="text-left"
           >
             <p className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-neutral-500 dark:text-glow-100/45">
-              <span>Hyderabad, India</span>
+              <span>Bengaluru, India</span>
               <span className="hidden text-neutral-300 dark:text-white/25 sm:inline" aria-hidden>
                 ·
               </span>
@@ -83,7 +42,7 @@ export default function Hero() {
             </p>
 
             <h1 className="font-display mt-4 text-display text-neutral-950 dark:text-white">
-              Khaza Shaik
+              Akhil Mukesh
             </h1>
 
             <p className="mt-4 max-w-xl text-lg font-medium leading-snug text-neutral-800 dark:text-glow-100/90">
@@ -151,12 +110,11 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="w-full lg:mt-8 lg:w-[304px] xl:mt-10 xl:w-[352px]"
           >
-            <HeroPortrait />
             <div className="mt-5 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
               <ResumeDownloadButton className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-50 px-4 py-2 text-sm font-semibold text-teal-700 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-500/60 hover:bg-teal-100 active:scale-[0.98] dark:border-teal-400/30 dark:bg-teal-400/10 dark:text-teal-300 dark:hover:bg-teal-400/15" />
 
               <a
-                href={`${import.meta.env.BASE_URL}Khaza-Shaik-Resume-ATS.docx`}
+                href={`${import.meta.env.BASE_URL}Akhil-Mukesh-Resume-ATS.docx`}
                 download="Khaza-Shaik-Resume.docx"
                 aria-label="Download ATS-friendly resume (Word .docx)"
                 className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-50 active:scale-[0.98] dark:border-white/15 dark:bg-white/[0.04] dark:text-glow-100 dark:hover:bg-white/10"

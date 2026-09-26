@@ -124,7 +124,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://github.com/khazaShaik"
+                href="https://github.com/AkhilMukesh"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -133,7 +133,7 @@ export default function Hero() {
                 <FaGithub className="size-[18px]" aria-hidden />
               </a>
               <a
-                href="https://linkedin.com/in/khaza-shaik-3344b5157"
+                href="https://www.linkedin.com/in/akhil-mukesh-43376a126/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -143,7 +143,7 @@ export default function Hero() {
                 <FaLinkedin className="size-[18px]" aria-hidden />
               </a>
               <a
-                href="mailto:Khazashaik4@gmail.com"
+                href="mailto:akhil1997mukesh@gmail.com"
                 aria-label="Email"
                 className="inline-flex size-10 items-center justify-center rounded-full border border-neutral-300 bg-white shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-50 active:scale-[0.98] dark:border-white/15 dark:bg-white/[0.04] dark:hover:bg-white/10"
                 style={{ color: '#EA4335' }}

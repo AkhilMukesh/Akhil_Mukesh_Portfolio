@@ -26,18 +26,18 @@ const MOCK_GIT_SUMMARY = {
       { method: "GET", path: "/api/v1/refunds/{refundId}/status", desc: "Fetches status of the banking ledger transaction." }
     ],
     files: [
-      { name: "OrderController.java", changes: "+45 -12", author: "Khaza Shaik", reviews: "Approved by: A. Reviewer" },
-      { name: "RefundService.java", changes: "+128 -8", author: "Khaza Shaik", reviews: "Approved by: B. Reviewer" },
-      { name: "OrderRepository.java", changes: "+12 -2", author: "Khaza Shaik", reviews: "Approved by: A. Reviewer" },
-      { name: "KafkaOrderProducer.java", changes: "+32 -0", author: "Khaza Shaik", reviews: "Approved by: B. Reviewer" }
+      { name: "OrderController.java", changes: "+45 -12", author: "Akhil Mukesh", reviews: "Approved by: A. Reviewer" },
+      { name: "RefundService.java", changes: "+128 -8", author: "Akhil Mukesh", reviews: "Approved by: B. Reviewer" },
+      { name: "OrderRepository.java", changes: "+12 -2", author: "Akhil Mukesh", reviews: "Approved by: A. Reviewer" },
+      { name: "KafkaOrderProducer.java", changes: "+32 -0", author: "Akhil Mukesh", reviews: "Approved by: B. Reviewer" }
     ],
     commits: [
-      { hash: "8fbc921", msg: "feat: implement cancellation route and validation bindings", author: "Khaza Shaik" },
-      { hash: "4a2de90", msg: "feat: add Kafka event producer for treasury ledger syncing", author: "Khaza Shaik" },
-      { hash: "c182bef", msg: "fix: resolve concurrency issue during race-condition cancellations", author: "Khaza Shaik" }
+      { hash: "8fbc921", msg: "feat: implement cancellation route and validation bindings", author: "Akhil Mukesh" },
+      { hash: "4a2de90", msg: "feat: add Kafka event producer for treasury ledger syncing", author: "Akhil Mukesh" },
+      { hash: "c182bef", msg: "fix: resolve concurrency issue during race-condition cancellations", author: "Akhil Mukesh" }
     ],
     mrs: [
-      { id: "#412", title: "Implement Self-Service Order Cancellations", author: "Khaza Shaik", reviewers: ["A. Reviewer (Principal Engineer)", "B. Reviewer (QA Architect)"] }
+      { id: "#412", title: "Implement Self-Service Order Cancellations", author: "Akhil Mukesh", reviewers: ["A. Reviewer (Principal Engineer)", "B. Reviewer (QA Architect)"] }
     ]
   }
 };

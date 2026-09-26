@@ -179,3 +179,71 @@ create index if not exists projects_sort_idx       on public.projects (sort_orde
 create index if not exists experience_sort_idx     on public.experience (sort_order);
 create index if not exists skill_groups_sort_idx   on public.skill_groups (sort_order);
 create index if not exists certifications_sort_idx on public.certifications (sort_order);
+
+-- ---------------------------------------------------------------------------
+--  Public portfolio visit and like counters
+--  Counters are changed only through SECURITY DEFINER RPCs; visitors get
+--  read access to the totals, but no direct write access to this table.
+-- ---------------------------------------------------------------------------
+create table if not exists public.portfolio_stats (
+  id          boolean primary key default true check (id),
+  visit_count bigint not null default 0 check (visit_count >= 0),
+  like_count  bigint not null default 0 check (like_count >= 0)
+);
+
+insert into public.portfolio_stats (id)
+values (true)
+on conflict (id) do nothing;
+
+alter table public.portfolio_stats enable row level security;
+drop policy if exists portfolio_stats_read on public.portfolio_stats;
+create policy portfolio_stats_read
+  on public.portfolio_stats
+  for select to anon, authenticated
+  using (true);
+
+revoke all on public.portfolio_stats from anon, authenticated;
+grant select on public.portfolio_stats to anon, authenticated;
+
+create or replace function public.record_portfolio_visit()
+returns bigint
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  new_visit_count bigint;
+begin
+  insert into public.portfolio_stats (id, visit_count)
+  values (true, 1)
+  on conflict (id) do update
+    set visit_count = public.portfolio_stats.visit_count + 1
+  returning visit_count into new_visit_count;
+
+  return new_visit_count;
+end;
+$$;
+
+create or replace function public.record_portfolio_like()
+returns bigint
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  new_like_count bigint;
+begin
+  insert into public.portfolio_stats (id, like_count)
+  values (true, 1)
+  on conflict (id) do update
+    set like_count = public.portfolio_stats.like_count + 1
+  returning like_count into new_like_count;
+
+  return new_like_count;
+end;
+$$;
+
+revoke all on function public.record_portfolio_visit() from public;
+revoke all on function public.record_portfolio_like() from public;
+grant execute on function public.record_portfolio_visit() to anon, authenticated;
+grant execute on function public.record_portfolio_like() to anon, authenticated;

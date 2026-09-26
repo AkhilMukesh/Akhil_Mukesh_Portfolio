@@ -30,6 +30,12 @@ npm run seed:build
 ```
 Then paste [`seed.sql`](./seed.sql) into the SQL Editor and **Run**.
 
+## Visit and like counters
+The public site includes a total visit counter and a Like button. To enable them
+on an existing Supabase project, run the updated [`schema.sql`](./schema.sql)
+again in the SQL Editor. It creates the stats table and RPC functions without
+resetting portfolio content or counter totals. Likes are counted on every click.
+
 ## 5. Create your admin user
 **Authentication → Users → Add user** (email + password), or enable email
 magic links under **Authentication → Providers → Email**. That email/password

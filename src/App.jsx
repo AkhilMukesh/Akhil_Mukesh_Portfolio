@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 import ScrollToTop from './components/ScrollToTop';
 import TechMarquee from './components/TechMarquee';
+import PortfolioEngagement from './components/PortfolioEngagement';
 import DemoDashboard from './components/DemoDashboard';
 import AdminPage from './components/admin/AdminPage';
 
@@ -52,6 +53,7 @@ function HomePage({ isDark, toggle }) {
         <TechMarquee />
       </div>
 
+      <PortfolioEngagement />
       <Footer />
       <ScrollToTop />
 

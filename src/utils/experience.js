@@ -4,7 +4,7 @@
  *
  * Career start: June 2020 (Software Engineer at Gove.co — first role from resume).
  */
-const CAREER_START = new Date(2020, 1, 1); // month is 0-indexed: 1 = February
+const CAREER_START = new Date(2020, 5, 1); // month is 0-indexed: 1 = February
 
 export function getYearsOfExperience(now = new Date()) {
   let years = now.getFullYear() - CAREER_START.getFullYear();

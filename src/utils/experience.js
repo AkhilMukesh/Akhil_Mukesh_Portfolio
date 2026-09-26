@@ -2,9 +2,9 @@
  * Returns the number of full years since the career started.
  * Updates automatically based on the current date.
  *
- * Career start: Feb 2016 (Software Engineer at TCS — first role from resume).
+ * Career start: June 2020 (Software Engineer at Gove.co — first role from resume).
  */
-const CAREER_START = new Date(2016, 1, 1); // month is 0-indexed: 1 = February
+const CAREER_START = new Date(2020, 1, 1); // month is 0-indexed: 1 = February
 
 export function getYearsOfExperience(now = new Date()) {
   let years = now.getFullYear() - CAREER_START.getFullYear();
@@ -19,7 +19,7 @@ export function getYearsOfExperience(now = new Date()) {
   return years;
 }
 
-/** Formatted string like "10+" for display. */
+/** Formatted string like "6+" for display. */
 export function getYearsOfExperienceLabel(now = new Date()) {
   return `${getYearsOfExperience(now)}+`;
 }

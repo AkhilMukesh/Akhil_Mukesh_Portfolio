@@ -3,6 +3,8 @@ import { Link } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiSun, HiMoon, HiBars3, HiXMark } from 'react-icons/hi2';
 import { SCROLL_OFFSET } from '../constants/layout';
+import profileFallback from '../data/profile';
+import { useContent } from '../context/ContentContext';
 
 // Short labels keep the bar scannable; every section still exists in the page.
 const navLinks = [
@@ -19,6 +21,14 @@ const navLinks = [
  * Full-width top bar: predictable hit targets, high contrast, works on any section background.
  */
 export default function Navbar({ isDark, toggleTheme }) {
+  const { profile = profileFallback } = useContent();
+  const initials = profile.name
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -52,13 +62,10 @@ export default function Navbar({ isDark, toggleTheme }) {
           duration={500}
           offset={SCROLL_OFFSET}
           className="group flex shrink-0 cursor-pointer items-center gap-2"
-          aria-label="Khaza Shaik — back to top"
+          aria-label={`${profile.name} — back to top`}
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-900 text-sm font-semibold text-white dark:bg-white dark:text-neutral-950">
-            KS
-          </span>
-          <span className="hidden font-medium tracking-tight text-neutral-900 dark:text-white sm:block">
-            Khaza Shaik
+            {initials}
           </span>
         </Link>
 

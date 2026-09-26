@@ -114,8 +114,8 @@ export default function Hero() {
               <ResumeDownloadButton className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-50 px-4 py-2 text-sm font-semibold text-teal-700 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-500/60 hover:bg-teal-100 active:scale-[0.98] dark:border-teal-400/30 dark:bg-teal-400/10 dark:text-teal-300 dark:hover:bg-teal-400/15" />
 
               <a
-                href={`${import.meta.env.BASE_URL}Akhil-Mukesh-Resume-ATS.docx`}
-                download="Khaza-Shaik-Resume.docx"
+                href={`${import.meta.env.BASE_URL}resume.docx`}
+                download="resume.docx"
                 aria-label="Download ATS-friendly resume (Word .docx)"
                 className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-50 active:scale-[0.98] dark:border-white/15 dark:bg-white/[0.04] dark:text-glow-100 dark:hover:bg-white/10"
               >

@@ -7,14 +7,14 @@
  */
 const certifications = [
   {
-    title: 'Machine Learning Specialization',
-    issuer: 'Stanford University & DeepLearning.AI',
-    date: 'May 2026',
-    detail:
-      'Supervised Machine Learning: Regression and Classification · Advanced Learning Algorithms · Unsupervised Learning, Recommenders, Reinforcement Learning',
-    credentialUrl:
-      'https://www.coursera.org/account/accomplishments/specialization/6RVBAZDB5TMZ',
-  },
+  title: 'TCS AI Hackathon',
+  issuer: 'Tata Consultancy Services (TCS)',
+  date: 'May 2026',
+  detail:
+    'Participated in an AI-focused hackathon, applying Generative AI and machine learning concepts to develop an innovative solution, collaborate on problem-solving, and present the proposed solution within a competitive hackathon environment.',
+  credentialUrl:
+    'YOUR_TCS_HACKATHON_CREDENTIAL_URL',
+},
 ];
 
 export default certifications;

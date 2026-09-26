@@ -29,10 +29,10 @@ export default function Footer() {
               Portfolio
             </p>
             <p className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-              Khaza Shaik
+              Akhil Mukesh
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/55">
-              AI engineer in Hyderabad. Building with LLMs on top of a long career in fullstack and
+              Full stack engineer in Bengaluru. Building with LLMs on top of a long career in fullstack and
               backend work. Open to new roles.
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function Footer() {
               </p>
               <div className="mt-4 flex gap-2">
                 <a
-                  href="https://github.com/khazaShaik"
+                  href="https://github.com/AkhilMukesh"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -74,7 +74,7 @@ export default function Footer() {
                   <FaGithub className="size-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/khaza-shaik-3344b5157"
+                  href="https://www.linkedin.com/in/akhil-mukesh-43376a126/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -83,7 +83,7 @@ export default function Footer() {
                   <FaLinkedin className="size-5" />
                 </a>
                 <a
-                  href="mailto:Khazashaik4@gmail.com"
+                  href="mailto:akhil1997mukesh@gmail.com"
                   aria-label="Email"
                   className="rounded-lg p-2.5 text-white/55 transition hover:bg-white/10 hover:text-white"
                 >
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-2 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row sm:justify-between">
-          <p>&copy; {year} Khaza Shaik. All rights reserved.</p>
+          <p>&copy; {year} Akhil Mukesh. All rights reserved.</p>
           <RouterLink
             to="/admin"
             className="text-white/30 transition hover:text-white/70"

@@ -41,11 +41,11 @@ export default function About() {
 
           <div className="space-y-4">
             {[
-              { label: 'Based in', value: 'Hyderabad, India' },
+              { label: 'Based in', value: 'Bengaluru, India' },
               { label: 'Experience', value: `${years} years` },
-              { label: 'Currently', value: 'Concentrix · T-Mobile SCM' },
-              { label: 'Focus', value: 'Full stack · Java, Angular/React, AI' },
-              { label: 'Domains', value: 'Telecom · Supply chain · Railroads · Finance' },
+              { label: 'Currently', value: 'TCS · IF P&C Insurance' },
+              { label: 'Focus', value: 'Full stack · Java, Python, Angular/React, AI' },
+              { label: 'Domains', value: 'Supply chain · Insurance · Banking and Finance' },
               { label: 'Education', value: profile.education.degree },
               { label: 'Availability', value: 'Open to new roles' },
             ].map((item, index) => (

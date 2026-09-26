@@ -18,7 +18,7 @@ import { useRevealOnce } from '../hooks/useRevealOnce';
 
 const INITIAL_FORM = { name: '', email: '', message: '' };
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const EMAIL_ADDRESS = 'Khazashaik4@gmail.com';
+const EMAIL_ADDRESS = 'akhil1997mukesh@gmail.com';
 
 // Pull EmailJS credentials from Vite env (.env.local). Falls back to
 // placeholders so the UI stays usable during development.
@@ -129,17 +129,17 @@ export default function Contact() {
     },
     {
       icon: HiPhone,
-      label: '+91 82913 33422',
-      href: 'tel:+918291333422',
+      label: '+91 8618097296',
+      href: 'tel:+918618097296',
     },
     {
       icon: FaLinkedin,
-      label: 'linkedin.com/in/khaza-shaik-3344b5157',
-      href: 'https://linkedin.com/in/khaza-shaik-3344b5157',
+      label: 'www.linkedin.com/in/akhil-mukesh-43376a126',
+      href: 'https://www.linkedin.com/in/akhil-mukesh-43376a126/',
     },
     {
       icon: HiMapPin,
-      label: 'Hyderabad, India',
+      label: 'Bengaluru, India',
       href: null,
     },
   ];

@@ -22,34 +22,6 @@ npm run dev       # start dev server
 npm run build     # production build to dist/
 npm run preview   # preview production build
 ```
-
-## Project Structure
-
-```
-portfolio/
-├── public/
-│   ├── resume.pdf                    ← generated, do not edit by hand
-│   └── Akhil-Mukesh-Resume-ATS.docx   ← generated, do not edit by hand
-├── scripts/
-│   ├── build-resume-pdf.mjs          ← renders the PDF résumé
-│   ├── build-resume-docx.mjs         ← renders the ATS-friendly .docx
-│   ├── build-seed.mjs                ← regenerates supabase/seed.sql
-│   └── load-content.mjs              ← Supabase-first content loader (static fallback)
-├── src/
-│   ├── components/
-│   │   ├── admin/                    ← CMS editors (profile, projects, experience…)
-│   │   └── resume/                   ← React-PDF résumé document
-│   ├── context/ContentContext.jsx    ← Supabase → static fallback
-│   ├── data/                         ← static content + offline fallback
-│   ├── hooks/                        ← useDarkMode, useCrud, useRevealOnce
-│   └── utils/                        ← getYearsOfExperience (auto-updates)
-├── supabase/
-│   ├── schema.sql                    ← tables, RLS, triggers
-│   ├── seed.sql                      ← generated from src/data
-│   └── README.md                     ← one-time setup guide
-└── index.html                        ← SEO meta, JSON-LD Person schema
-```
-
 ## Content: one source of truth
 
 Content lives in **Supabase** when configured, and falls back to `src/data/*.js`

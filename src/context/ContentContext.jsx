@@ -43,6 +43,7 @@ const mapExperience = (r) => ({
   duration: r.duration,
   location: r.location,
   client: r.client ?? undefined,
+  website: r.website ?? undefined,
   highlights: r.highlights ?? [],
   techAI: r.tech_ai ?? [],
   tech: r.tech ?? [],

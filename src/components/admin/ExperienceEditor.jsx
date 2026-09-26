@@ -104,6 +104,13 @@ export default function ExperienceEditor({ notify }) {
                   onCommit={(v) => save(job.id, { client: v || null })}
                 />
               </Field>
+              <Field label="Website URL (optional)">
+                <InlineText
+                  value={job.website ?? ''}
+                  placeholder="https://example.com"
+                  onCommit={(v) => save(job.id, { website: v || null })}
+                />
+              </Field>
             </div>
 
             <Field label="Highlights">

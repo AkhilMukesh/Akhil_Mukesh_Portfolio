@@ -51,6 +51,7 @@ create table if not exists public.experience (
   duration    text        not null default '',
   location    text        not null default '',
   client      text,
+  website     text,
   highlights  text[]      not null default '{}',
   -- `tech_ai` renders as accent-coloured chips before a divider, `tech` after,
   -- so an AI-heavy role can show its AI stack distinctly from the rest.
@@ -64,6 +65,8 @@ create table if not exists public.experience (
 -- Safe to re-run against an existing project that predates tech_ai.
 alter table if exists public.experience
   add column if not exists tech_ai text[] not null default '{}';
+alter table if exists public.experience
+  add column if not exists website text;
 
 -- ---------------------------------------------------------------------------
 --  skill_groups   (items is JSONB: [{ name, icon, color }, ...])

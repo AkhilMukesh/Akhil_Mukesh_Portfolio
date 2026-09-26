@@ -55,7 +55,7 @@ lines.push('');
 // experience
 lines.push('truncate table public.experience restart identity cascade;');
 lines.push(
-  'insert into public.experience (role, company, duration, location, client, highlights, tech_ai, tech, sort_order) values',
+  'insert into public.experience (role, company, duration, location, client, website, highlights, tech_ai, tech, sort_order) values',
 );
 lines.push(
   experience
@@ -63,7 +63,7 @@ lines.push(
       (e, i) =>
         `  (${q(e.role)}, ${q(e.company)}, ${q(e.duration)}, ${q(
           e.location,
-        )}, ${q(e.client)}, ${textArr(e.highlights)}, ${textArr(
+        )}, ${q(e.client)}, ${q(e.website)}, ${textArr(e.highlights)}, ${textArr(
           e.techAI,
         )}, ${textArr(e.tech)}, ${i})`,
     )

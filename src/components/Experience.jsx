@@ -1,9 +1,19 @@
 import { motion } from 'framer-motion';
-import { HiBriefcase, HiMapPin } from 'react-icons/hi2';
+import { HiArrowTopRightOnSquare, HiBriefcase, HiMapPin } from 'react-icons/hi2';
 import { useContent } from '../context/ContentContext';
 import SectionBadge from './SectionBadge';
 import { SCROLL_MARGIN_CLASS } from '../constants/layout';
 import { useRevealOnce } from '../hooks/useRevealOnce';
+
+const getWebsiteHref = (value) => {
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : null;
+  } catch {
+    return null;
+  }
+};
 
 export default function Experience() {
   const { experience } = useContent();
@@ -35,7 +45,9 @@ export default function Experience() {
           <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gray-200 dark:bg-ink-800" />
 
           <div className="space-y-10">
-            {experience.map((job, index) => (
+            {experience.map((job, index) => {
+              const websiteHref = getWebsiteHref(job.website);
+              return (
               <motion.div
                 key={job.id ?? `${job.company}-${job.role}`}
                 initial={{ opacity: 0, x: -20 }}
@@ -60,6 +72,18 @@ export default function Experience() {
                       <p className="text-sm text-primary-600 dark:text-primary-400 font-medium">
                         {job.company}
                       </p>
+                      {websiteHref && (
+                        <a
+                          href={websiteHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary-600 underline-offset-2 hover:underline dark:text-primary-400"
+                          aria-label={`Visit ${job.company} website (opens in a new tab)`}
+                        >
+                          Visit website
+                          <HiArrowTopRightOnSquare className="size-3" aria-hidden="true" />
+                        </a>
+                      )}
                     </div>
                     <div className="text-xs text-gray-400 dark:text-glow-100/40 space-y-0.5 sm:text-right">
                       <p className="font-mono">{job.duration}</p>
@@ -126,7 +150,8 @@ export default function Experience() {
                   )}
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </motion.div>
